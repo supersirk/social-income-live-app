@@ -1,0 +1,273 @@
+:root {
+    --blue: #3980d0;
+    --indigo: #2d1582;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #de4437;
+    --orange: #fd7e14;
+    --yellow: #fbc700;
+    --green: #28a745;
+    --teal: #00c9a7;
+    --cyan: #09a5be;
+    --white: #fafafa;
+    --gray: #8c98a4;
+    --gray-dark: #71869d;
+    --primary: #3980d0;
+    --secondary: #fbc700;
+    --success: #00c9a7;
+    --info: #76bed0;
+    --warning: #f55d3e;
+    --danger: #de4437;
+    --light: #f7faff;
+    --dark: #1e2022;
+    --cucolor1: #fbc700;
+    --cucolor1l: #fde68b;
+    --cucolor1ll: #fef5d1;
+    --cucolor1d: #59481c;
+    --cucolor1dd: #171200;
+    --cucolor2: #878e88;
+    --cucolor2l: #c8ccc9;
+    --cucolor2ll: #f4f5f4;
+    --cucolor2d: #4a4d4a;
+    --cucolor2dd: #191a19;
+    --cucolor3: #f55d3e;
+    --cucolor3l: #fab5a7;
+    --cucolor3ll: #fef0ed;
+    --cucolor3d: #863322;
+    --cucolor3dd: #260e0a;
+    --cucolor4: #3980d0;
+    --cucolor4l: #a4c4ff;
+    --cucolor4ll: #edf3ff;
+    --cucolor4d: #1f4671;
+    --cucolor4dd: #0a1726;
+}
+
+body {
+    font-family: "Work Sans", Arial !important;
+}
+
+.colorwrapper {
+    min-height: 100vh;
+}
+
+.fullscreen.fullscreen-enabled>.colorwrapper {
+    padding: 1% !important;
+}
+
+.fullscreen.fullscreen-enabled .close-fullscreen {
+    display: inline-block !important;
+}
+
+.fullscreen.fullscreen-enabled .admin-header {
+    display: none !important;
+}
+
+.fullscreen.fullscreen-enabled .container {
+    max-width: 100% !important;
+}
+
+.splash {
+    /* Height & width depends on how you want to reveal the splash (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 10000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    /* Black fallback color */
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("logo-animated.svg");
+    background-position: center;
+    background-size: 300px 38px;
+    background-repeat: no-repeat;
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the splash (height or width, depending on reveal) */
+}
+
+
+/* Position the content inside the splash */
+
+.splash-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.responsive-google-slides {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-google-slides iframe {
+    border: 0;
+    position: absolute;
+    top: -0.5%;
+    left: -0.5%;
+    background: transparent;
+    width: 101% !important;
+    height: 101% !important;
+}
+
+
+/*svg stuffs*/
+
+svg.results text {
+    fill: var(--blue);
+    white-space: pre;
+    font-family: "Work Sans";
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 0px;
+    text-anchor: end;
+}
+
+svg .big,
+svg.results text.big {
+    font-size: 96px;
+    text-anchor: end;
+}
+
+svg .labels,
+svg.results text.labels {
+    font-weight: 400;
+}
+
+.rounded-lg {
+    border-radius: 25px;
+}
+
+
+/* RANGE SLIDER CSS*/
+
+
+/* 
+input[type="range"] {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 200px;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-image: linear-gradient(#ff4500, #ff4500);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+} */
+
+
+/* Input Thumb */
+
+input[type="range"].range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 38px !important;
+    width: 38px !important;
+    border-radius: 50%;
+    background: #edf3ff !important;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+    margin-top: -16px !important;
+}
+
+input[type="range"].range-slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 38px !important;
+    width: 38px !important;
+    border-radius: 50%;
+    background: #edf3ff !important;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type="range"].range-slider::-ms-thumb {
+    -webkit-appearance: none;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background: #edf3ff;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type="range"].range-slider::-webkit-slider-thumb:hover {
+    background: white;
+}
+
+input[type="range"].range-slider:active::-webkit-slider-thumb {
+    background: var(--yellow) !important;
+}
+
+input[type="range"].range-slider::-moz-range-thumb:hover {
+    background: white;
+}
+
+input[type="range"].range-slider::-ms-thumb:hover {
+    background: white;
+}
+
+
+/* Input Track */
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px !important;
+    background: transparent;
+    height: 9px !important;
+}
+
+input[type="range"]::-moz-range-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    height: 9px !important;
+}
+
+input[type="range"].range-slider::-ms-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+input[type="range"].range-slider::-webkit-progress-value {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fbc700 !important;
+    height: 9px !important;
+    border-radius: 5px;
+}
+
+input[type="range"].range-slider::-moz-range-progress {
+    background-color: #fbc700;
+    height: 9px !important;
+    border-radius: 5px;
+}
+
+
+/*
+// IE
+  &::-ms-fill-lower {
+    background-color: #43e5f7; 
+  }
+  &::-ms-fill-upper {  
+    background-color: #9a905d;
+  }
+*/
